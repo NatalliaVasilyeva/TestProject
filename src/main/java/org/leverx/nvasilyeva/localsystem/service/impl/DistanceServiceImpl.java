@@ -37,13 +37,6 @@ public class DistanceServiceImpl implements DistanceService {
     }
 
     /**
-     * Invalidate all cache
-     */
-    @CacheEvict(value = "distance", allEntries = true)
-    public void deleteAllCacheValuesOfDistance() {
-    }
-
-    /**
      * Delete cache if local time of update info is out of date
      * Scheduled method run at 10 o'clock every 7 days
      */
@@ -52,4 +45,11 @@ public class DistanceServiceImpl implements DistanceService {
         if(timeService.checkLastRoadNetworkUpdate()) deleteAllCacheValuesOfDistance();
     }
 
+
+    /**
+     * Invalidate all cache
+     */
+    @CacheEvict(value = "distance", allEntries = true)
+    public void deleteAllCacheValuesOfDistance() {
+    }
 }

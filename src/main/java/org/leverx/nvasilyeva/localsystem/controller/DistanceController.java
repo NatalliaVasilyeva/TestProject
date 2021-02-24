@@ -1,4 +1,4 @@
-package org.leverx.nvasilyeva.localsystem.сontroller;
+package org.leverx.nvasilyeva.localsystem.controller;
 
 import org.leverx.nvasilyeva.localsystem.entity.LatLong;
 import org.leverx.nvasilyeva.localsystem.entity.Route;
@@ -10,12 +10,19 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping(value="/api/distance/v1")
 public class DistanceController {
 
-    private DistanceService distanceService;
+    private final DistanceService distanceService;
 
     @Autowired
     public DistanceController(DistanceService distanceService) {
         this.distanceService = distanceService;
     }
+
+
+    /**
+     * Get distance
+     * @param route - object that include start and finish points
+     * @return distance between 2 points
+     */
 
     @PostMapping(value = "/pointsDistance")
     @ResponseBody

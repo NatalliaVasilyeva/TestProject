@@ -34,11 +34,11 @@ public class TimeServiceImpl implements TimeService {
         return isChanged;
     }
 
-    public LocalDate getLastUpdate() {
+    private LocalDate getLastUpdate() {
         return lastUpdate;
     }
 
-    public void setLastUpdate(LocalDate lastUpdate) {
+    private void setLastUpdate(LocalDate lastUpdate) {
         this.lastUpdate = lastUpdate;
     }
 }
